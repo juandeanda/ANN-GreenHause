@@ -6,10 +6,12 @@ def readFile(name):
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         for row in csv_reader:
-           aux = np.zeros(len(row))
+           aux2 = []
            for i in range(0,len(row)):
-               aux[i] = row[i]
-           dataset.append(aux)
+               aux2.append(float(row[i]))
+               if(i == len(row)-1):
+                 aux2.append(int(row[i]))
+           dataset.append(aux2)
     return dataset
 
     
